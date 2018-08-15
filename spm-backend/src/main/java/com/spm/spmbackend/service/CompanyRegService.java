@@ -1,4 +1,4 @@
-package com.example.back_end.service;
+package com.spm.spmbackend.service;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.back_end.model.CompanyReg;
-import com.example.back_end.repository.CompanyRegRepo;
+import com.spm.spmbackend.model.CompanyReg;
+import com.spm.spmbackend.repository.CompanyRegRepo;
 
 @RestController
 

@@ -1,4 +1,4 @@
-package com.example.back_end.model;
+package com.spm.spmbackend.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
