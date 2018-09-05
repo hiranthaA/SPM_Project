@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import './content.css';
 
-class ContentTwo extends Component {
+class ContentOne extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render(){
     return(
       <div className="content">
-        this is ContentTwo company
+        this is ContentOne student
       </div>
     );
   }
 }
 
-export default ContentTwo;
+export default ContentOne;

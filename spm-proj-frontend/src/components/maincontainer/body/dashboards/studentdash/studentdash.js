@@ -3,9 +3,9 @@ import SidePanel from './sidepanel/sidepanel'
 import ContentOne from './content/contentOne';
 import ContentTwo from './content/contentTwo';
 import ContentThree from './content/contentThree';
-import './admindash.css';
+import './studentdash.css';
 
-class AdminDash extends Component {
+class StudentDash extends Component {
 
   constructor(props){
     super(props);
@@ -41,7 +41,7 @@ class AdminDash extends Component {
     }
 
     return(
-      <div className="admindash">
+      <div className="studentdash">
           <SidePanel setView={this.setView} />
           {content}
       </div>
@@ -49,4 +49,4 @@ class AdminDash extends Component {
   }
 }
 
-export default AdminDash;
+export default StudentDash;

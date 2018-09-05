@@ -10,7 +10,7 @@ class ContentOne extends Component {
   render(){
     return(
       <div className="content">
-        this is ContentOne
+        this is ContentOne company
       </div>
     );
   }

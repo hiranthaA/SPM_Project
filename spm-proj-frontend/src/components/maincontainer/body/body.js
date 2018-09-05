@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Login from './login/login';
 import CompanyDash from './dashboards/companydash/comapnydash';
+import AdminDash from './dashboards/admindash/admindash';
+import StudentDash from './dashboards/studentdash/studentdash';
 
 class Body extends Component {
 
@@ -10,7 +12,7 @@ class Body extends Component {
     this.setLoadedBody = this.setLoadedBody.bind(this);
 
     this.state={
-      loaded_body : "company"
+      loaded_body : "admin"
     }
   }
 
@@ -30,6 +32,16 @@ class Body extends Component {
     else if(this.state.loaded_body==="company"){
       body=(
         < CompanyDash/>
+      );
+    }
+    else if(this.state.loaded_body==="admin"){
+      body=(
+        < AdminDash/>
+      );
+    }
+    else if(this.state.loaded_body==="student"){
+      body=(
+        < StudentDash/>
       );
     }
 
