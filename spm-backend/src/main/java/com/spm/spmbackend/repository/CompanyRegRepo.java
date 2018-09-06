@@ -1,8 +1,8 @@
-package com.example.back_end.repository;
+package com.spm.spmbackend.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.back_end.model.CompanyReg;
+import com.spm.spmbackend.model.CompanyReg;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
