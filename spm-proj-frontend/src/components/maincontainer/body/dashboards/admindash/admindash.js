@@ -3,6 +3,7 @@ import SidePanel from './sidepanel/sidepanel'
 import ContentOne from './content/contentOne';
 import ContentTwo from './content/contentTwo';
 import ContentThree from './content/contentThree';
+import ContentFour from './content/contentFour';
 import './admindash.css';
 
 class AdminDash extends Component {
@@ -38,6 +39,10 @@ class AdminDash extends Component {
       content = (
         <ContentThree/>
       );
+    }else if(this.state.view==="contentFour"){
+      content = (
+        <ContentFour/>
+      )
     }
 
     return(
