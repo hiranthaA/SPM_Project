@@ -167,9 +167,10 @@ class ContentFour extends Component {
               </tbody>
             </Table>
 
-            <Button  value="Create I-1 Form" onClick={this.createFormI1.bind(this)}>Create</Button>
+           
             <hr/>
             </div>
+            <Button  value="Create I-1 Form" onClick={this.createFormI1.bind(this)}>Create</Button>
         </div>
       </div>
     );
