@@ -12,7 +12,7 @@ class Body extends Component {
     this.setLoadedBody = this.setLoadedBody.bind(this);
 
     this.state={
-      loaded_body : "admin"
+      loaded_body : "student"
     }
   }
 
