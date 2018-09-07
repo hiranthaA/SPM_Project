@@ -14,6 +14,7 @@ class SidePanel extends Component {
             <a href="#" class="list-group-item list-group-item-action" onClick={()=> this.props.setView("contentOne")}>First item</a>
             <a href="#" class="list-group-item list-group-item-action" onClick={()=> this.props.setView("contentTwo")}>Second item</a>
             <a href="#" class="list-group-item list-group-item-action" onClick={()=> this.props.setView("contentThree")}>Third item</a>
+			<a href="#" class="list-group-item list-group-item-action" onClick={()=> this.props.setView("contentFour")}>Form I-1</a>
           </div>
       </div>
     );
