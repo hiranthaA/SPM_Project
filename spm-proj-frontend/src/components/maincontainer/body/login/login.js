@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class Login extends Component {
+    constructor(props){
+        super(props);
+    
+      }
   render(){
     return(
         <div>   
@@ -23,8 +27,8 @@ class Login extends Component {
                                         <label for="pwd">Password:</label>
                                         <input type="password" class="form-control" id="pwd"/>
                                     </div>
-                                    <button type="button" class="btn btn-info">Register</button>
-                                    <button type="button" class="btn btn-success">Login</button>
+                                    <button type="button" class="btn btn-info p-2" onClick={()=> this.props.setview("registration")}>Register</button>
+                                    <button type="button" class="btn btn-success p-2">Login</button>
                                 </div>
                             </div>
                         </div>
