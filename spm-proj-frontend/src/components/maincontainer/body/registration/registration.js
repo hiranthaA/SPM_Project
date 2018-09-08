@@ -172,7 +172,7 @@ class Registration extends Component {
 
                                 <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-8 pb-3 pt-2">
-                                        <button type="submit" class="btn btn-outline-primary btn-block" >Register</button>
+                                        <button type="submit" class="btn btn-outline-primary btn-block" onClick={this.addCompany}>Register</button>
                                     </div>
                                 </div>
                             </form>
@@ -186,6 +186,59 @@ class Registration extends Component {
       </div>
     );
   }
+
+    addCompany(){
+
+        var cmpname = document.getElementById("defaultFormRegistercmpNameEx").value;
+        var address = document.getElementById("defaultFormRegisterAddressEx").value;
+        var pername = document.getElementById("defaultFormRegisterNameEx").value;
+        var tele = document.getElementById("defaultFormRegistertpEx").value;
+        var email = document.getElementById("defaultFormRegisterEmailEx").value;
+        var password = document.getElementById("defaultFormRegisterPasswrdEx").value;
+        var confPassword = document.getElementById("defaultFormRegisterPasswrdConEx").value;
+
+        if(cmpname===""){
+            alert("Fill the name");
+        }else if(address===""){
+            alert("Fill the address");
+        }else if(pername===""){
+            alert("Fill the person name");
+        }else if(tele===""){
+            alert("Fill the telephone");
+        }else if(email===""){
+            alert("Fill the email");
+        }else if(password===""){
+            alert("Fill the password");
+        }else if(email===""){
+            alert("Fill the email");
+        }else if(password!==confPassword){
+            alert("Password entered doesn't match");
+        }else if(tele.length!==10){
+            alert("Invalid telephone number");
+        }else {
+            var obj = {
+                cmpName: cmpname,
+                address: address,
+                personInCharge: pername,
+                contact : tele,
+                email : email,
+                password: password
+            };
+
+            fetch('http://localhost:9000/company/add', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({obj})
+            }).then(function () {
+                alert("Company Registered Succesfully");
+            })
+        }
+
+    }
+
 }
 
 export default Registration;
