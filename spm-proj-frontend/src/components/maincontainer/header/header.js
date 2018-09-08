@@ -4,7 +4,7 @@ class Header extends Component {
   render(){
     return(
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Industrial Training Dashboard</a>z
+        <a class="navbar-brand" href="#">Industrial Training Dashboard</a>
       </nav>
     );
   }
