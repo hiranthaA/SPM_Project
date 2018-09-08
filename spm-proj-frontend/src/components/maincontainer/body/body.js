@@ -4,6 +4,11 @@ import CompanyDash from './dashboards/companydash/comapnydash';
 import AdminDash from './dashboards/admindash/admindash';
 import StudentDash from './dashboards/studentdash/studentdash';
 import Registration from './registration/registration';
+<<<<<<< HEAD
+=======
+import SupervisorDash from './dashboards/supervisordash/supervisordash';
+
+>>>>>>> 73acb470d240e20faf2e2b57a7c410f283d276cb
 
 class Body extends Component {
 
@@ -13,7 +18,11 @@ class Body extends Component {
     this.setLoadedBody = this.setLoadedBody.bind(this);
 
     this.state={
+<<<<<<< HEAD
       loaded_body : "login"
+=======
+      loaded_body : "supervisor"
+>>>>>>> 73acb470d240e20faf2e2b57a7c410f283d276cb
     }
   }
 
@@ -50,6 +59,14 @@ class Body extends Component {
         < Registration/>
       );
     }
+<<<<<<< HEAD
+=======
+    else if(this.state.loaded_body==="supervisor"){
+      body=(
+        < SupervisorDash/>
+      );
+    }
+>>>>>>> 73acb470d240e20faf2e2b57a7c410f283d276cb
 
     return(
       <div>
