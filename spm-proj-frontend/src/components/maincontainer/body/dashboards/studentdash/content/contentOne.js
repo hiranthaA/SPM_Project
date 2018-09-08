@@ -26,6 +26,14 @@ class ContentOne extends Component {
                   </div>
                 </div>
 
+                
+                <div className="col-sm-6 col-md-6">
+                  <div className="form-group">
+                    <label id="label" >Student Name</label>
+                    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Student Name"></input>
+                  </div>
+                </div>
+
                 <div className="col-sm-6 col-md-2">
                   <div className="form-group">
                     <label id="label">Year</label>

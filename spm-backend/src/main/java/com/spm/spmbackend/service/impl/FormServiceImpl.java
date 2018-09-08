@@ -34,5 +34,24 @@ public class FormServiceImpl implements FormService {
 	public Form_i_1 getFormi1BystatusAndsupervisorEmail(String status, String supervisorEmail) {
 		return formi1Repo.findOneByStatusAndSupervisorEmail(status, supervisorEmail);
 	}
+
+	@Override
+	public Form_i_1 getFormi1ByStatus(String status) {
+		return formi1Repo.findOneByStatus(status);
+	}
+
+	@Override
+	public Form_i_1 updateFormi1ByFormid(String formid, Form_i_1 c) {
+		
+		Form_i_1 o =  formi1Repo.findOneByFormId(formid);
+		if(o!=null) {
+			c.setFormId(formid);	
+			formi1Repo.save(c);
+			return c;
+		}else {
+			return o;
+		}
+	}
+	
 	
 }

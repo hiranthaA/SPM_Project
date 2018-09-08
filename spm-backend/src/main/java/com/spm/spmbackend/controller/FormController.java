@@ -44,14 +44,33 @@ public class FormController {
 		
 	}
 	
-	@RequestMapping(value="/formi1/supervisorID/{supID}/status/{status}", method=RequestMethod.GET)
-	public Form_i_1 getFormI1ByStudentID(@PathVariable("status") String status,@PathVariable("supID") String supID) {
+	@RequestMapping(value="/formi1/supervisorEmail/{supID}/status/{status}", method=RequestMethod.GET)
+	public Form_i_1 getFormI1BySupervisorAndFormStatus(@PathVariable("status") String status,@PathVariable("supID") String supID) {
 		System.out.println(status+": "+ supID);
 		return  formservise.getFormi1BystatusAndsupervisorEmail(status,supID);
 		//return c;
 		
 		
 	}
+	
+	@RequestMapping(value="/formi1/status/{status}", method=RequestMethod.GET)
+	public Form_i_1 getFormI1ByFormStatus(@PathVariable("status") String status){
+		System.out.println(status);
+		return  formservise.getFormi1ByStatus(status);
+		//return c;
+		
+		
+	}
+	
+	@RequestMapping(value="/formi1/id/{formid}", method=RequestMethod.PUT)
+	public Form_i_1 updateFormI1ByFormStatus(@RequestBody Form_i_1 c, @PathVariable("formid") String formid){
+		System.out.println(formid);
+		return  formservise.updateFormi1ByFormid(formid,c);
+		//return c;
+		
+		
+	}
+	
 	
 	
 	

@@ -13,96 +13,40 @@ class ContentFour extends Component {
   constructor(){
     super();
     this.state = {
-        date : new Date()
+        date : new Date(),
+        StudentID:null,
+        StudentName:null,
+        StudentAddress:null,
+        StudentEmail:null,
+        StudentCGPA:null,
+        StudentHomeContact:null,
+        StudentMobile:null,
+        StudentYear:null,
     }
-    
+    this.getStudentDetails();
   }  
   componentWillMount(){
 
   }
+
+
+  getStudentDetails(){
+
+    this.setState({
+      StudentID:'null',
+      StudentName:'null',
+      StudentAddress:'null',
+      StudentEmail:'null',
+      StudentCGPA:'null',
+      StudentHomeContact:'null',
+      StudentMobile:'null',
+      StudentYear:'null'
+    });
+
+  }
+
   createFormI1(e){
-    // var tr1 = document.createElement('tr');
-
-    // var td1 = document.createElement('td');
-    // var td2 = document.createElement('td');
-    // td1.innerHTML = "Student ID:";
-    // td2.innerHTML = '"<input type="text" id ="stdName" name="StudentName"/> "';
-
-    // var tr2 = document.createElement('tr');
-
-    // var td3 = document.createElement('td');
-    // var td4 = document.createElement('td');
-    // td3.innerHTML = "Address:";
-    // td4.innerHTML = <input type="text" id ="addr" name="StudentAddress"/> ;
-    
-    // var tr3 = document.createElement('tr');
-
-    // var td5 = document.createElement('td');
-    // var td6 = document.createElement('td');
-    // td5.innerHTML = "Home Phone:";
-    // td6.innerHTML = <input type="text" id ="hpho" name="StudentHomeContact"/> ;
-    
-    // var tr4 = document.createElement('tr');
-
-    // var td7 = document.createElement('td');
-    // var td8 = document.createElement('td');
-    // td7.innerHTML = "Mobile Phone:";
-    // td8.innerHTML = <input type="text" id ="mpho" name="StudentMobile"/> ;
-    
-    // var tr5 = document.createElement('tr');
-
-    // var td9 = document.createElement('td');
-    // var td10 = document.createElement('td');
-    // td9.innerHTML = "E-mail Addresses:";
-    // td10.innerHTML = <input type="text" id ="emailAddr" name="StudentEmail"/> ;
-    
-    // var tr6 = document.createElement('tr');
-
-    // var td11 = document.createElement('td');
-    // var td12 = document.createElement('td');
-    // var td13 = document.createElement('td');
-    // var td14 = document.createElement('td');
-    // var td15 = document.createElement('td');
-    // var td16 = document.createElement('td');
-    // td11.innerHTML = "Semester: ";
-    // td12.innerHTML = <input type="text" id ="sem" name="Semester"/> ;
-    // td13.innerHTML = "Year: ";
-    // td14.innerHTML = <input type="text" id ="yr" name="Yeat"/>
-    // td15.innerHTML = "CGPA: ";
-    // td16.innerHTML = <input type="text" id ="cgpa" name="StudentCGPA"/>
-
-
-    // tr1.appendChild(td1);
-    // tr1.appendChild(td2);
-
-    // tr2.appendChild(td3);
-    // tr2.appendChild(td4);
-
-    // tr3.appendChild(td5);
-    // tr3.appendChild(td6);
-
-    // tr4.appendChild(td7);                                
-    // tr4.appendChild(td8);
-
-    // tr5.appendChild(td9);
-    // tr5.appendChild(td10);
-
-    // tr6.appendChild(td11);
-    // tr6.appendChild(td12);
-    // tr6.appendChild(td13);
-    // tr6.appendChild(td14);
-    // tr6.appendChild(td15);
-    // tr6.appendChild(td16);  
-
-    // var tbd =document.getElementById("formI1Body");
-    // tbd.appendChild(tr1);
-    // tbd.appendChild(tr2);
-    // tbd.appendChild(tr3);
-    // tbd.appendChild(tr4);
-    // tbd.appendChild(tr5);
-    // tbd.appendChild(tr6);
-
-
+   
     const input = document.getElementById('divToPrint');
                     html2canvas(input).then(
                         (canvas)=>{
@@ -137,7 +81,7 @@ class ContentFour extends Component {
               <tbody id="formI1Body">
                 <tr>
                   <td>Student ID:</td>
-                  <td colSpan='5'><input className='inputBlock' type="text" id ="stdName" name="StudentName"/></td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="stdName" name="StudentName" value={this.state.StudentID} /></td>
                 </tr>
                 <tr>
                   <td>Address:</td>
