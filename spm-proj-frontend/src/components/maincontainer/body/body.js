@@ -3,6 +3,8 @@ import Login from './login/login';
 import CompanyDash from './dashboards/companydash/comapnydash';
 import AdminDash from './dashboards/admindash/admindash';
 import StudentDash from './dashboards/studentdash/studentdash';
+import SupervisorDash from './dashboards/supervisordash/supervisordash';
+
 
 class Body extends Component {
 
@@ -12,7 +14,7 @@ class Body extends Component {
     this.setLoadedBody = this.setLoadedBody.bind(this);
 
     this.state={
-      loaded_body : "student"
+      loaded_body : "supervisor"
     }
   }
 
@@ -42,6 +44,11 @@ class Body extends Component {
     else if(this.state.loaded_body==="student"){
       body=(
         < StudentDash/>
+      );
+    }
+    else if(this.state.loaded_body==="supervisor"){
+      body=(
+        < SupervisorDash/>
       );
     }
 
