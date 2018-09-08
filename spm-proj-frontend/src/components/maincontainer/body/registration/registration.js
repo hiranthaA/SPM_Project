@@ -119,8 +119,65 @@ class Registration extends Component {
 
             </div>
 
+
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            Place your code here
+            {/*Place your code here*/}
+
+                    <div class="card">
+                        <div className="card-header">
+                            <h4 className="heading "><i class="fas fa-user-plus"></i> Company Registration</h4>
+                        </div>
+                        <div class="card-body" >
+
+                            <form role="form">
+                                <div class="form-group row">
+                                    <label className="grey-text">Company Name</label>
+                                    <input type="text" placeholder="eg: ABC Company" id="defaultFormRegistercmpNameEx" className="form-control w-100"/><br/>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label className="grey-text">Address</label>
+                                    <input type="text" placeholder="eg: No.1, Orugodawaththa, Colombo" id="defaultFormRegisterAddressEx" className="form-control w-100"/><br/>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label className="grey-text">Name(Person in charge)</label>
+                                    <input type="text" placeholder="eg: Joe Root" id="defaultFormRegisterNameEx" className="form-control w-100"/><br/>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label className="grey-text">Telephone(Person in charge)</label>
+                                    <input type="number" placeholder="eg: 0711234567" id="defaultFormRegistertpEx" className="form-control w-100"/><br/>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label className="grey-text">Email(Person in charge)</label>
+                                    <input type="email" placeholder="eg: someone@abc.com" id="defaultFormRegisterEmailEx" className="form-control w-100"/><br/>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label className="grey-text">Password</label>
+                                    <input type="password" id="defaultFormRegisterPasswrdEx" className="form-control w-100"/><br/>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label className="grey-text">Confirm Password</label>
+                                    <input type="password" id="defaultFormRegisterPasswrdConEx" className="form-control w-100"/><br/>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="offset-sm-2 col-sm-8 pb-3 pt-2">
+                                        <button type="submit" class="btn btn-outline-primary btn-block" >Register</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
             </div>
           </div>
 
