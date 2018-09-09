@@ -18,4 +18,9 @@ public class UserServiceImpl implements UserService {
 		return userepo.insert(u);
 	}
 
+	@Override
+	public User getUserByNameAndPassword(String username, String password) {
+		return userepo.findOneByEmailAndPassword(username, password);
+	}
+
 }

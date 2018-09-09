@@ -24,5 +24,10 @@ public class SupervisorServiceImpl implements SupervisorService {
 	public Supervisor addSupervisor(Supervisor s) {
 		return superrepo.insert(s);
 	}
+
+	@Override
+	public Supervisor getSupervisorByEmail(String email) {
+		return superrepo.findOneByEmail(email);
+	}
 	
 }

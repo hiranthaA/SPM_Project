@@ -15,12 +15,15 @@ class Body extends Component {
     this.setLoadedBody = this.setLoadedBody.bind(this);
 
     this.state={
-      loaded_body : "login"
+      loaded_body : "login",
+      loggeduser:null
     }
   }
 
-  setLoadedBody(x){
+  setLoadedBody(x,y){
+    this.setState({loggeduser:y});
     this.setState({loaded_body:x});
+    
   }
 
   render(){
@@ -34,27 +37,28 @@ class Body extends Component {
     }
     else if(this.state.loaded_body==="company"){
       body=(
-        < CompanyDash/>
+        < CompanyDash loggeduser={this.state.loggeduser}/>
       );
     }
     else if(this.state.loaded_body==="admin"){
       body=(
-        < AdminDash/>
+        < AdminDash loggeduser={this.state.loggeduser}/>
       );
     }
     else if(this.state.loaded_body==="student"){
       body=(
-        < StudentDash/>
+        < StudentDash loggeduser={this.state.loggeduser}/>
       );
     }
     else if(this.state.loaded_body==="registration"){
       body=(
-        < Registration/>
+        < Registration setview={this.setLoadedBody}/>
       );
     }
     else if(this.state.loaded_body==="supervisor"){
+      console.log(this.state.loggeduser);
       body=(
-        < SupervisorDash/>
+        < SupervisorDash loggeduser={this.state.loggeduser}/>
       );
     }
 

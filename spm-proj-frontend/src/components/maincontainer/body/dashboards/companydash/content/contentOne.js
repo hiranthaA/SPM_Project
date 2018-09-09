@@ -26,7 +26,7 @@ class ContentOne extends Component {
       fname: null,
       lname: null,
       company: null,
-      title: null,
+      title: "Mr.",
       email: null,
       contact: null,
       designation: null,
@@ -149,12 +149,7 @@ class ContentOne extends Component {
         
       }
 
-      var usr = {
-        id : "",
-        username : this.state.email,
-        password: this.state.password,
-        type : "supervisor"
-      }
+      
 
       Axios.post('http://localhost:9000/supervisor/add',supvsr).then(function (data) {
             console.log(data.data);
@@ -162,14 +157,18 @@ class ContentOne extends Component {
         }.bind(this)).then(function (object) {
           let supData = object;
           console.log(supData);
-
-          // Axios.post('http://localhost:9001/adddiag',Diagnosis).then(function(){
-          //   console.log("successfully inserted");
-          //   alert("Diagnosis Added Successfully!");
-          // });
+          var usr = {
+            id : supData.id,
+            email : this.state.email,
+            password: this.state.password,
+            type : "supervisor"
+          }
+          Axios.post('http://localhost:9000/user/addUser',usr).then(function(){
+            console.log("successfully inserted");
+          });
           return supData;
       }.bind(this)).then(function(usr){
-        alert("Supervisor addded. User Updated");
+        alert("Supervisor Added Successfully");
         document.getElementById("fname").value="";
         document.getElementById("lname").value="";
         document.getElementById("designation").value="";
