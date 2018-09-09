@@ -11,7 +11,7 @@ import com.spm.spmbackend.model.User;
 import com.spm.spmbackend.service.UserService;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin
 @RequestMapping("/user")
 public class UserController {
 
