@@ -75,7 +75,7 @@ class Registration extends Component {
                         <div className="col-md-12">
                           <div className="form-group">
                             <label id="label">Email</label>
-                            <input type="text" className="form-control" id="email" placeholder="Student Name"></input>
+                            <input type="email" className="form-control" id="email" placeholder="Email"></input>
                           </div>
                         </div>
                       </div>
@@ -309,6 +309,8 @@ class Registration extends Component {
       }).then(function (data) {
         console.log("return",data.itNo);
         alert("Student Registration Succesfully");
+        this.props.setview("login");
+         
       })
     }
   }

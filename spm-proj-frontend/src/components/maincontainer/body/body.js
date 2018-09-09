@@ -49,7 +49,7 @@ class Body extends Component {
     }
     else if(this.state.loaded_body==="registration"){
       body=(
-        < Registration/>
+        < Registration setview={this.setLoadedBody}/>
       );
     }
     else if(this.state.loaded_body==="supervisor"){
