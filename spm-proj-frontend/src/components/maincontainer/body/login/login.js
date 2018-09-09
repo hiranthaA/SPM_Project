@@ -97,8 +97,23 @@ class Login extends Component {
                                             <label for="pwd">Password:</label>
                                             <input type="password" onChange={this.setPassword} class="form-control" id="pwd" />
                                         </div>
-                                        <button type="button" class="btn btn-info p-2" onClick={() => this.props.setview("registration")}>Register</button>
-                                        <button type="button" class="btn btn-success p-2" onClick={this.handleLoginClick}>Login</button>
+
+                                    </div>
+                                    <div className="card-footer">
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <div className="row">
+                                                    <div className="col-md-6 ">
+                                                        <button type="button" class="btn btn-info btn-block p-2" onClick={() => this.props.setview("registration")}><i class="fas fa-user-plus"></i> Register</button>
+                                                        {/*<button type="button" class="btn btn-success p-2" onClick={this.handleLoginClick}>Login</button>*/}
+                                                    </div>
+                                                    <div className="col-md-6 ml-auto">
+                                                        {/*<button type="button" class="btn btn-info btn-block p-2" onClick={() => this.props.setview("registration")}>Register</button>*/}
+                                                        <button type="button" class="btn btn-success btn-block p-2" onClick={this.handleLoginClick}><i class="fas fa-user"></i> Login</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

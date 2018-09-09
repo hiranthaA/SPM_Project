@@ -26,7 +26,7 @@ class StudentDash extends Component {
 
     if(this.state.view==="contentOne"){
       content = (
-        <ContentOne/>
+        <ContentOne superProps={this.props.loggeduser}/>
       );
     }
     else if(this.state.view==="contentTwo"){

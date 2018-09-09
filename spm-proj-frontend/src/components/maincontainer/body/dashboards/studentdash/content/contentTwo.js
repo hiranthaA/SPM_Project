@@ -5,7 +5,9 @@ class ContentTwo extends Component {
   render(){
     return(
       <div className="content">
-        this is ContentTwo student
+          <div className="card header">
+              <h4 className="heading pl-2">Student Page</h4>
+          </div>
       </div>
     );
   }

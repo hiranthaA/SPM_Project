@@ -26,7 +26,7 @@ class SupervisorDash extends Component {
 
     if(this.state.view==="contentOne"){
       content = (
-        <ContentOne/>
+        <ContentOne loggeduser={this.props.loggeduser}/>
       );
     }
     else if(this.state.view==="contentTwo"){

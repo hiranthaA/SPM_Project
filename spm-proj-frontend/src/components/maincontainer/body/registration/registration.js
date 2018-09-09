@@ -145,6 +145,7 @@ class Registration extends Component {
                 <div class="card-body" >
 
                   <form onSubmit={this.addCompany}>
+
                     <div class="form-group row">
                       <label className="grey-text">Company Name</label>
                       <input type="text" placeholder="eg: ABC Company" id="defaultFormRegistercmpNameEx" className="form-control w-100" /><br />
@@ -230,7 +231,7 @@ class Registration extends Component {
       };
 
 
-      fetch('http://localhost:9002/company/add', {
+      fetch('http://localhost:9000/company/add', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain',
@@ -247,7 +248,7 @@ class Registration extends Component {
           password: password,
           type: "company"
         };
-        return fetch('http://localhost:9002/user/addUser', {
+        return fetch('http://localhost:9000/user/addUser', {
           method: 'POST',
           headers: {
             'Accept': 'application/json, text/plain',
@@ -279,26 +280,26 @@ class Registration extends Component {
     var studentPass = document.getElementById("studentPassword").value;
     var studentPassConf = document.getElementById("studentPasswordConf").value;
 
-    if (itNo === "") {
-      alert("Fill the name");
-    } else if (year === "") {
-      alert("Fill the address");
-    } else if (semester === "") {
-      alert("Fill the person name");
-    } else if (gpa === "") {
-      alert("Fill the telephone");
+    if (itNo === ""||itNo.length!==10) {
+      alert("Invalid IT number");
+    } else if (year === ""||year>4) {
+      alert("Invalid Year");
+    } else if (semester === ""||semester>2||semester<1) {
+      alert("Invalid Semester Details");
+    } else if (gpa === ""||gpa>4||gpa<0) {
+      alert("Invalid GPA detials");
     } else if (studentName === "") {
-      alert("Fill the email");
+      alert("Invalid student name");
     } else if (address === "") {
-      alert("Fill the password");
+      alert("Invalid address details");
     } else if (email === "") {
       alert("Fill the email");
-    } else if (mobileNo == "") {
-      alert("Password entered doesn't match");
+    } else if (mobileNo==""||mobileNo.length !==10) {
+      alert("Invalid MobileNo");
     } else if (studentPass !== studentPassConf) {
       alert("Password entered doesn't match");
     } else if (homeNo == "") {
-      alert("Invalid telephone number");
+      alert("Invalid Home TelephoneNo");
     } else {
 
       let student = {
@@ -312,7 +313,7 @@ class Registration extends Component {
         semester: semester,
         gpa: gpa
       };
-      fetch('http://localhost:9002/student/add', {
+      fetch('http://localhost:9000/student/add', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain',
@@ -331,7 +332,7 @@ class Registration extends Component {
           password: studentPass,
           type: "student"
         };
-        return fetch('http://localhost:9002/user/addUser', {
+        return fetch('http://localhost:9000/user/addUser', {
           method: 'POST',
           headers: {
             'Accept': 'application/json, text/plain',

@@ -26,7 +26,7 @@ class ContentOne extends Component {
       fname: null,
       lname: null,
       company: null,
-      title: null,
+      title: "Mr.",
       email: null,
       contact: null,
       designation: null,
@@ -168,7 +168,7 @@ class ContentOne extends Component {
           });
           return supData;
       }.bind(this)).then(function(usr){
-        alert("Supervisor addded. User Updated");
+        alert("Supervisor Added Successfully");
         document.getElementById("fname").value="";
         document.getElementById("lname").value="";
         document.getElementById("designation").value="";
