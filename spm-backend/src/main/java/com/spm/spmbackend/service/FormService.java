@@ -11,5 +11,6 @@ public interface FormService {
 	public Form_i_1 getFormi1BystatusAndsupervisorEmail(String status, String supervisorEmail);
 	public Form_i_1 getFormi1ByStatus(String status);
 	public Form_i_1 updateFormi1ByFormid(String formid,Form_i_1 c);
+	public Form_i_1 getFormi1BystatusAndstudentEmail( String student);
 	
 }

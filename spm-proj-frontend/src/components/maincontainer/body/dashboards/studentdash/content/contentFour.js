@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import axios                        from 'axios';
 import { css }                      from 'styled-components';
 import jsPDF                        from 'jspdf';
 import html2canvas                  from 'html2canvas';
@@ -10,9 +10,11 @@ import './content.css';
 
 class ContentFour extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.setName = this.setName.bind(this);
     this.state = {
+        formID:null,
         date : new Date(),
         StudentID:null,
         StudentName:null,
@@ -22,29 +24,61 @@ class ContentFour extends Component {
         StudentHomeContact:null,
         StudentMobile:null,
         StudentYear:null,
+        Semester:null
     }
     this.getStudentDetails();
   }  
   componentWillMount(){
 
   }
+  componentDidMount(){
+    debugger;
+    console.log(this.props);
+    this.getStudentDetails();
+  }
 
 
   getStudentDetails(){
+    axios.get("http://localhost:9000/forms/formi1/studentEmail/aaaa@abcd.com").then(
+      function(response){
+        debugger;
+        console.log(response.data);
 
-    this.setState({
-      StudentID:'null',
-      StudentName:'null',
-      StudentAddress:'null',
-      StudentEmail:'null',
-      StudentCGPA:'null',
-      StudentHomeContact:'null',
-      StudentMobile:'null',
-      StudentYear:'null'
+        this.setState({
+          formID:response.data.dormid,
+          StudentID:response.data.studentId,
+          StudentName:response.data.studentName,
+          StudentAddress:response.data.studentAddress,
+          StudentEmail:response.data.studentEmail,
+          StudentCGPA:response.data.cgpa,
+          StudentHomeContact:response.data.studentHomePhone,
+          StudentMobile:response.data.studentMobilePhone,
+          StudentYear:response.data.year,
+          Semester:response.data.semester
+        });
+
+      }.bind(this)
+    ).catch(function (error) {
+      console.log(error);
+    });
+    
+
+  }
+  updateFormI1(e){
+    
+    
+    axios.post("http://localhost:9000/forms/formi1",{studentId:this.state.StudentID,studentName:this.state.StudentName,studentAddress:this.state.StudentAddress,studentEmail:this.state.StudentEmail}).then(
+      function(response){
+        console.log(response);
+      }
+    ).catch(function (error) {
+      console.log(error);
     });
 
   }
-
+  setName(e){
+    this.setState({StudentName:e.target.value})
+  }
   createFormI1(e){
    
     const input = document.getElementById('divToPrint');
@@ -81,31 +115,35 @@ class ContentFour extends Component {
               <tbody id="formI1Body">
                 <tr>
                   <td>Student ID:</td>
-                  <td colSpan='5'><input className='inputBlock' type="text" id ="stdName" name="StudentName" value={this.state.StudentID} /></td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="stdId" name="StudentId" value={this.state.StudentID}  /></td>
+                </tr>
+                <tr>
+                  <td>Student Name:</td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="stdName" name="StudentName" value={this.state.StudentName} onChange={this.setName}/></td>
                 </tr>
                 <tr>
                   <td>Address:</td>
-                  <td colSpan='5'><input className='inputBlock' type="text" id ="addr" name="StudentAddress"/></td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="addr" name="StudentAddress" value={this.state.StudentAddress}/></td>
                 </tr>
                 <tr>
                   <td>Home Phone:</td>
-                  <td colSpan='5'><input className='inputBlock' type="text" id ="hpho" name="StudentHomeContact"/></td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="hpho" name="StudentHomeContact" value={this.state.StudentHomeContact}/></td>
                 </tr>
                 <tr>
                   <td>Mobile Phone:</td>
-                  <td colSpan='5'> <input className='inputBlock' type="text" id ="mpho" name="StudentMobile"/> </td>
+                  <td colSpan='5'> <input className='inputBlock' type="text" id ="mpho" name="StudentMobile" value={this.state.StudentMobile}/> </td>
                 </tr>
                 <tr>
                   <td>E-mail Addresses:</td>
-                  <td colSpan='5'><input className='inputBlock' type="text" id ="emailAddr" name="StudentEmail"/></td>
+                  <td colSpan='5'><input className='inputBlock' type="text" id ="emailAddr" name="StudentEmail" value={this.state.StudentEmail}/></td>
                 </tr>
                 <tr>
                   <td>Semester:</td>
-                  <td><input className='inputBlock' type="text" id ="sem" name="Semester"/></td>
+                  <td><input className='inputBlock' type="text" id ="sem" name="Semester" value={this.state.Semester}/></td>
                   <td>Year:</td>
-                  <td><input className='inputBlock' type="text" id ="yr" name="Year"/></td>
+                  <td><input className='inputBlock' type="text" id ="yr" name="Year" value={this.state.StudentYear}/></td>
                   <td>CGPA:</td>
-                  <td><input className='inputBlock' type="text" id ="cgpa" name="StudentCGPA"/></td>
+                  <td><input className='inputBlock' type="text" id ="cgpa" name="StudentCGPA" value={this.state.StudentCGPA}/></td>
                   
                 </tr>
               </tbody>
@@ -115,6 +153,7 @@ class ContentFour extends Component {
             <hr/>
             </div>
             <Button  value="Create I-1 Form" onClick={this.createFormI1.bind(this)}>Create</Button>
+            <Button  value="Update I-1 Form" onClick={this.updateFormI1.bind(this)}>Add</Button>
         </div>
       </div>
     );

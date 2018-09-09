@@ -52,6 +52,14 @@ public class FormController {
 		
 		
 	}
+	@RequestMapping(value="/formi1/studentEmail/{stdEmail}", method=RequestMethod.GET)
+	public Form_i_1 getFormI1ByStudentAndFormStatus(@PathVariable("stdEmail") String stdEmail) {
+		System.out.println(": "+ stdEmail);
+		return  formservise.getFormi1BystatusAndstudentEmail(stdEmail);
+		//return c;
+		
+		
+	}
 	
 	@RequestMapping(value="/formi1/status/{status}", method=RequestMethod.GET)
 	public Form_i_1 getFormI1ByFormStatus(@PathVariable("status") String status){
@@ -70,6 +78,11 @@ public class FormController {
 		
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 	

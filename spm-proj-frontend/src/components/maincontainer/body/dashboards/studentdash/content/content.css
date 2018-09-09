@@ -3,10 +3,16 @@
     height : 100vh;
 }
 
+.
+
 .heading{
     text-align: left;
 }
 
 #label{
     float: left;
+}
+
+.inputBlock{
+    width:100%;
 }
