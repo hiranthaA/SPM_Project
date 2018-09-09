@@ -36,39 +36,55 @@ class Registration extends Component {
                         <div className="col-sm-6 col-md-6">
                           <div className="form-group">
                             <label id="label" >Student ID</label>
-                            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Student ID"></input>
+                            <input type="text" className="form-control" id="studentID" placeholder="Student ID"></input>
                           </div>
                         </div>
 
                         <div className="col-sm-6 col-md-2">
                           <div className="form-group">
                             <label id="label">Year</label>
-                            <input type="number" min='1' max='4' className="form-control" id="formGroupExampleInput" placeholder="Year" ></input>
+                            <input type="number" min='1' max='4' className="form-control" id="year" placeholder="Year" ></input>
                           </div>
                         </div>
 
                         <div className="col-md-2">
                           <div className="form-group">
                             <label id="label">Semester</label>
-                            <input type="number" min='1' max='2' className="form-control" id="formGroupExampleInput" placeholder="Sem"></input>
+                            <input type="number" min='1' max='2' className="form-control" id="semester" placeholder="Sem"></input>
                           </div>
                         </div>
 
                         <div className="col-md-2">
                           <div className="form-group">
                             <label id="label">GPA</label>
-                            <input type="number" min='1' max='4' className="form-control" id="formGroupExampleInput" placeholder="GPA" ></input>
+                            <input type="number" min='1' max='4' className="form-control" id="gpa" placeholder="GPA" ></input>
                           </div>
                         </div>
+                      </div>
 
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="form-group">
+                            <label id="label">Student Name</label>
+                            <input type="text" className="form-control" id="studentName" placeholder="Student Name"></input>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="form-group">
+                            <label id="label">Email</label>
+                            <input type="text" className="form-control" id="email" placeholder="Student Name"></input>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="row">
                         <div className="col-md-12">
                           <div className="form-group">
                             <label id="label">Address</label>
-                            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Student Address"></input>
+                            <input type="text" className="form-control" id="address" placeholder="Student Address"></input>
                           </div>
                         </div>
                       </div>
@@ -77,13 +93,13 @@ class Registration extends Component {
                         <div className="col-md-6">
                           <div className="form-group">
                             <label id="label">Mobile</label>
-                            <input type="number" className="form-control" id="formGroupExampleInput" placeholder="Mobile"></input>
+                            <input type="number" className="form-control" id="mobile" placeholder="Mobile"></input>
                           </div>
                         </div>
                         <div className="col-md-6">
                           <div className="form-group">
                             <label id="label">Home</label>
-                            <input type="number" className="form-control" id="formGroupExampleInput" placeholder="Home"></input>
+                            <input type="number" className="form-control" id="home" placeholder="Home"></input>
                           </div>
                         </div>
                       </div>
@@ -105,7 +121,7 @@ class Registration extends Component {
 
                       <div className="row">
                         <div className="col-md-3 ml-auto">
-                          <button type="button" class="btn btn-outline-primary btn-block">Register</button>
+                          <button type="button" class="btn btn-outline-primary btn-block" onClick={this.addStudent} >Register</button>
                         </div>
                       </div>
 
@@ -119,70 +135,65 @@ class Registration extends Component {
 
             </div>
 
-<<<<<<< HEAD
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            Place your code here
-=======
 
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            {/*Place your code here*/}
+              {/*Place your code here*/}
 
-                    <div class="card">
-                        <div className="card-header">
-                            <h4 className="heading "><i class="fas fa-user-plus"></i> Company Registration</h4>
-                        </div>
-                        <div class="card-body" >
+              <div class="card">
+                <div className="card-header">
+                  <h4 className="heading "><i class="fas fa-city"></i> Company Registration</h4>
+                </div>
+                <div class="card-body" >
 
-                            <form role="form">
-                                <div class="form-group row">
-                                    <label className="grey-text">Company Name</label>
-                                    <input type="text" placeholder="eg: ABC Company" id="defaultFormRegistercmpNameEx" className="form-control w-100"/><br/>
+                  <form role="form">
+                    <div class="form-group row">
+                      <label className="grey-text">Company Name</label>
+                      <input type="text" placeholder="eg: ABC Company" id="defaultFormRegistercmpNameEx" className="form-control w-100" /><br />
 
-                                </div>
-                                <div class="form-group row">
-                                    <label className="grey-text">Address</label>
-                                    <input type="text" placeholder="eg: No.1, Orugodawaththa, Colombo" id="defaultFormRegisterAddressEx" className="form-control w-100"/><br/>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label className="grey-text">Name(Person in charge)</label>
-                                    <input type="text" placeholder="eg: Joe Root" id="defaultFormRegisterNameEx" className="form-control w-100"/><br/>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label className="grey-text">Telephone(Person in charge)</label>
-                                    <input type="number" placeholder="eg: 0711234567" id="defaultFormRegistertpEx" className="form-control w-100"/><br/>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label className="grey-text">Email(Person in charge)</label>
-                                    <input type="email" placeholder="eg: someone@abc.com" id="defaultFormRegisterEmailEx" className="form-control w-100"/><br/>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label className="grey-text">Password</label>
-                                    <input type="password" id="defaultFormRegisterPasswrdEx" className="form-control w-100"/><br/>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label className="grey-text">Confirm Password</label>
-                                    <input type="password" id="defaultFormRegisterPasswrdConEx" className="form-control w-100"/><br/>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-8 pb-3 pt-2">
-                                        <button type="submit" class="btn btn-outline-primary btn-block" onClick={this.addCompany}>Register</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
->>>>>>> 73acb470d240e20faf2e2b57a7c410f283d276cb
+                    <div class="form-group row">
+                      <label className="grey-text">Address</label>
+                      <input type="text" placeholder="eg: No.1, Orugodawaththa, Colombo" id="defaultFormRegisterAddressEx" className="form-control w-100" /><br />
+
+                    </div>
+                    <div class="form-group row">
+                      <label className="grey-text">Name(Person in charge)</label>
+                      <input type="text" placeholder="eg: Joe Root" id="defaultFormRegisterNameEx" className="form-control w-100" />
+
+                    </div>
+
+                    <div class="form-group row">
+                      <label className="grey-text">Telephone(Person in charge)</label>
+                      <input type="number" placeholder="eg: 0711234567" id="defaultFormRegistertpEx" className="form-control w-100" /><br />
+
+                    </div>
+
+                    <div class="form-group row">
+                      <label className="grey-text">Email(Person in charge)</label>
+                      <input type="email" placeholder="eg: someone@abc.com" id="defaultFormRegisterEmailEx" className="form-control w-100" /><br />
+
+                    </div>
+
+                    <div class="form-group row">
+                      <label className="grey-text">Password</label>
+                      <input type="password" id="defaultFormRegisterPasswrdEx" className="form-control w-100" /><br />
+
+                    </div>
+
+                    <div class="form-group row">
+                      <label className="grey-text">Confirm Password</label>
+                      <input type="password" id="defaultFormRegisterPasswrdConEx" className="form-control w-100" /><br />
+
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="offset-sm-2 col-sm-8 pb-3 pt-2">
+                        <button type="submit" class="btn btn-outline-primary btn-block" onClick={this.addCompany}>Register</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -191,62 +202,117 @@ class Registration extends Component {
       </div>
     );
   }
-<<<<<<< HEAD
-=======
 
-    addCompany(){
+  addCompany() {
 
-        var cmpname = document.getElementById("defaultFormRegistercmpNameEx").value;
-        var address = document.getElementById("defaultFormRegisterAddressEx").value;
-        var pername = document.getElementById("defaultFormRegisterNameEx").value;
-        var tele = document.getElementById("defaultFormRegistertpEx").value;
-        var email = document.getElementById("defaultFormRegisterEmailEx").value;
-        var password = document.getElementById("defaultFormRegisterPasswrdEx").value;
-        var confPassword = document.getElementById("defaultFormRegisterPasswrdConEx").value;
+    var cmpname = document.getElementById("defaultFormRegistercmpNameEx").value;
+    var address = document.getElementById("defaultFormRegisterAddressEx").value;
+    var pername = document.getElementById("defaultFormRegisterNameEx").value;
+    var tele = document.getElementById("defaultFormRegistertpEx").value;
+    var email = document.getElementById("defaultFormRegisterEmailEx").value;
+    var password = document.getElementById("defaultFormRegisterPasswrdEx").value;
+    var confPassword = document.getElementById("defaultFormRegisterPasswrdConEx").value;
 
-        if(cmpname===""){
-            alert("Fill the name");
-        }else if(address===""){
-            alert("Fill the address");
-        }else if(pername===""){
-            alert("Fill the person name");
-        }else if(tele===""){
-            alert("Fill the telephone");
-        }else if(email===""){
-            alert("Fill the email");
-        }else if(password===""){
-            alert("Fill the password");
-        }else if(email===""){
-            alert("Fill the email");
-        }else if(password!==confPassword){
-            alert("Password entered doesn't match");
-        }else if(tele.length!==10){
-            alert("Invalid telephone number");
-        }else {
-            var obj = {
-                cmpName: cmpname,
-                address: address,
-                personInCharge: pername,
-                contact : tele,
-                email : email,
-                password: password
-            };
+    if (cmpname === "") {
+      alert("Fill the name");
+    } else if (address === "") {
+      alert("Fill the address");
+    } else if (pername === "") {
+      alert("Fill the person name");
+    } else if (tele === "") {
+      alert("Fill the telephone");
+    } else if (email === "") {
+      alert("Fill the email");
+    } else if (password === "") {
+      alert("Fill the password");
+    } else if (email === "") {
+      alert("Fill the email");
+    } else if (password !== confPassword) {
+      alert("Password entered doesn't match");
+    } else if (tele.length !== 10) {
+      alert("Invalid telephone number");
+    } else {
 
-            fetch('http://localhost:9000/company/add', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json, text/plain',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({obj})
-            }).then(function () {
-                alert("Company Registered Succesfully");
-            })
-        }
+      let obj = {
+        cmpName: cmpname,
+        address: address,
+        personInCharge: pername,
+        contact: tele,
+        email: email,
+        password: password
+      };
 
+      fetch('http://localhost:9000/company/add', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ obj })
+      }).then(function () {
+        alert("Company Registered Succesfully");
+      })
     }
 
->>>>>>> 73acb470d240e20faf2e2b57a7c410f283d276cb
+  }
+
+  addStudent() {
+    var itNo = document.getElementById("studentID").value;
+    var year = document.getElementById("year").value;
+    var semester = document.getElementById("semester").value;
+    var gpa = document.getElementById("gpa").value;
+    var studentName = document.getElementById("studentName").value;
+    var address = document.getElementById("address").value;
+    var mobileNo = document.getElementById("mobile").value;
+    var homeNo = document.getElementById("home").value;
+    var email = document.getElementById("email").value;
+
+    if (itNo === "") {
+      alert("Fill the name");
+    } else if (year === "") {
+      alert("Fill the address");
+    } else if (semester === "") {
+      alert("Fill the person name");
+    } else if (gpa === "") {
+      alert("Fill the telephone");
+    } else if (studentName === "") {
+      alert("Fill the email");
+    } else if (address === "") {
+      alert("Fill the password");
+    } else if (email === "") {
+      alert("Fill the email");
+    } else if (mobileNo =="") {
+      alert("Password entered doesn't match");
+    } else if (homeNo== "") {
+      alert("Invalid telephone number");
+    } else {
+
+      let student = {
+        itNo:itNo,
+        studentName:studentName,
+        address:address,
+        mobileNo:mobileNo,
+        homeNo:homeNo,
+        email:email,
+        year:year,
+        semester:semester,
+        gpa:gpa
+        };
+        console.log(student);
+      fetch('http://localhost:9002/student/add', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(student)
+      }).then(function (data) {
+        console.log("return",data.itNo);
+        alert("Student Registration Succesfully");
+      })
+    }
+  }
+
 }
 
 export default Registration;
