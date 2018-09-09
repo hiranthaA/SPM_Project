@@ -21,8 +21,9 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Student addStudent(Student s) {
 		System.out.println("this is impl"+s.getAddress());
-		studentrepo.insert(s);
-		return s;
+		Student r = studentrepo.insert(s);
+		System.out.println(r.getId());
+		return r;
 	}
 
 }
