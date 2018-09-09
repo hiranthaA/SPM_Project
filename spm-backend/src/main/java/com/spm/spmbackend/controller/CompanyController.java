@@ -13,7 +13,7 @@ import com.spm.spmbackend.model.Company;
 import com.spm.spmbackend.service.CompanyService;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin
 @RequestMapping("/company")
 public class CompanyController {
 	
