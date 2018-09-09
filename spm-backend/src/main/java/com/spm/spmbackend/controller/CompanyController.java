@@ -13,7 +13,7 @@ import com.spm.spmbackend.model.Company;
 import com.spm.spmbackend.service.CompanyService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 @RequestMapping("/company")
 public class CompanyController {
 	
@@ -27,10 +27,11 @@ public class CompanyController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public Company addCompany(@RequestBody Company c) {
-		System.out.println(c.getCmpId());
+		//System.out.println(c.getCmpId());
+		System.out.println(c.getAddress());
 		return compservice.addCompany(c);
-		//return c;
-		
 		
 	}
+	
+	
 }
