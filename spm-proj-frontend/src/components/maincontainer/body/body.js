@@ -20,6 +20,10 @@ class Body extends Component {
     }
   }
 
+  setLoadedBodyToLogin(){
+    this.setState({loaded_body : "login"});
+  }
+
   setLoadedBody(x,y){
     this.setState({loggeduser:y});
     this.setState({loaded_body:x});
