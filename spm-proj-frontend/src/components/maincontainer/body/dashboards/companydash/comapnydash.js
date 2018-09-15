@@ -17,6 +17,10 @@ class CompanyDash extends Component {
     }
   }
 
+  componentDidMount(){
+    console.log(this.props.loggeduser);
+  }
+
   setView(x){
     this.setState({view:x});
   }
@@ -26,7 +30,7 @@ class CompanyDash extends Component {
 
     if(this.state.view==="contentOne"){
       content = (
-        <ContentOne/>
+        <ContentOne loggeduser={this.props.loggeduser}/>
       );
     }
     else if(this.state.view==="contentTwo"){

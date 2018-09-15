@@ -35,6 +35,11 @@ class ContentOne extends Component {
     }
   }
 
+  componentDidMount(){
+    console.log(this.props.loggeduser);
+    this.setCompany(this.props.loggeduser.id);
+  }
+
   setFirstName(e) {
     console.log(e.target.value);
     this.setState({ fname: e.target.value });
@@ -48,6 +53,11 @@ class ContentOne extends Component {
   setTitle(e) {
     console.log(e.target.value);
     this.setState({ title: e.target.value });
+  }
+
+  setCompany(e){
+    console.log(e);
+    this.setState({company: e});
   }
 
   setEmail(e) {
@@ -141,7 +151,7 @@ class ContentOne extends Component {
       var supvsr = {
         fname: this.state.fname,
         lname: this.state.lname,
-        company: "",
+        companyid: this.state.company,
         title: this.state.title,
         email: this.state.email,
         contact: this.state.contact,
@@ -182,6 +192,7 @@ class ContentOne extends Component {
     }
     else {
       console.log("validation failed");
+      alert("Invalid Submit. Please check your entries and try again!");
     }
   }
 
