@@ -8,8 +8,10 @@ class MainContainer extends Component {
     super(props);
     this.childBody = React.createRef();
     this.setLoggedStatus=this.setLoggedStatus.bind(this);
+    this.setLoadedBody = this.setLoadedBody.bind(this);
     this.state={
-      loggedStatus : false
+      loggedStatus : false,
+      loadedBody : "login"
     }
   }
 
@@ -20,12 +22,17 @@ class MainContainer extends Component {
     this.childBody.current.setLoadedBodyToLogin();
   }
 
+  setLoadedBody(lb){
+    this.setState({loadedBody : lb});
+    console.log("this is MC setloadedBody fn : "+lb);
+  }
+
   render(){
 
     return(
       <div>
-        <Header logout={this.setLoggedStatus}/>
-        <Body ref={this.childBody}/>
+        <Header logout={this.setLoggedStatus} loadedBody={this.state.loadedBody}/>
+        <Body ref={this.childBody} setMCLoadedBody = {this.setLoadedBody}/>
       </div>
     );
   }

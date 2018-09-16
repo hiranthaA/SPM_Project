@@ -27,7 +27,7 @@ class Body extends Component {
   setLoadedBody(x,y){
     this.setState({loggeduser:y});
     this.setState({loaded_body:x});
-    
+    this.props.setMCLoadedBody(x);
   }
 
   render(){
