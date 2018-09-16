@@ -14,6 +14,9 @@ class Login extends Component {
         }
     }
 
+    componentWillMount(){
+        this.props.setview("login",null);
+    }
 
     setUsername(e) {
         console.log(e.target.value);

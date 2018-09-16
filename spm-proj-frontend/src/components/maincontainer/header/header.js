@@ -9,11 +9,27 @@ class Header extends Component {
   }
 
   render() {
+    let logoutbutton;
+
+    if(this.props.loadedBody==="login"){
+      logoutbutton = "";
+    }
+    else if(this.props.loadedBody==="registration"){
+      logoutbutton = (
+        <button type="button" class="btn btn-outline-success" onClick={this.props.logout}>Login</button>
+      );
+    }
+    else{
+      logoutbutton = (
+        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Logout</button>
+      );
+    }
+    
+
     return (
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
         <a class="navbar-brand" href="#" id="headertext">Industrial Training Dashboard</a>
-        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Logout</button>
-
+        {logoutbutton}
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
